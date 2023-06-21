@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+/*import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:sqflite/sqflite.dart';
 import '../../models/weight_info.dart';
@@ -187,3 +187,4 @@ class _WeightHomeState extends State<WeightHome> {
     );
   }
 }
+*/

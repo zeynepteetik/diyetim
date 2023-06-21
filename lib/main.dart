@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_login_register/firebase_options.dart';
 import 'package:flutter_login_register/screen/home_screen.dart';
 import 'package:flutter_login_register/screen/login.dart';
+import 'package:hive_flutter/hive_flutter.dart';
+
 
 
 void main() async{
@@ -10,6 +12,11 @@ void main() async{
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
 );
+
+  await Hive.initFlutter();
+
+  // open a box
+  var box = await Hive.openBox('mybox');
   runApp(const MyApp());
 }
 
@@ -25,7 +32,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home:  HomeScreen(),
+      home:  LoginScreen(),
       debugShowCheckedModeBanner: false,
     );
   }

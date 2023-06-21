@@ -1,4 +1,4 @@
-import "package:flutter/material.dart";
+/*import "package:flutter/material.dart";
 import "package:flutter_login_register/screen/weight_list/weight_process.dart";
 
 import "../../models/weight_info.dart";
@@ -110,3 +110,4 @@ class _ListWeightGroupState extends State<ListWeightGroup> {
     );
   }
 }
+*/

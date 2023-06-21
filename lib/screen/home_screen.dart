@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_login_register/path_provider/path_provider.dart';
 import 'package:flutter_login_register/screen/bagis_yap/bagis_yap.dart';
 import 'package:flutter_login_register/screen/profil.dart';
 import 'package:flutter_login_register/screen/weight_list/weight_process.dart';
@@ -69,7 +70,7 @@ void initState() {
               onTap: () {
                 Navigator.of(context)
                     .pushReplacement(MaterialPageRoute(builder: (context) {
-                  return BagisScreen();
+                  return ProviderModel();
                 }));
               },
             ),
@@ -165,7 +166,7 @@ void initState() {
                   // Halter öğesine tıklandığında halter sayfasına yönlendirme yapılabilir
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => const WeightHome()),
+                    MaterialPageRoute(builder: (context) =>  HomeScreen()),
                   );
                   break;
               }
