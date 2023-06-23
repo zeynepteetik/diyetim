@@ -12,17 +12,17 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  // reference the hive box
+ 
   final _myBox = Hive.box('mybox');
   ToDoDataBase db = ToDoDataBase();
 
   @override
   void initState() {
-    // if this is the 1st time ever openin the app, then create default data
+    
     if (_myBox.get("TODOLIST") == null) {
       db.createInitialData();
     } else {
-      // there already exists data
+      
       db.loadData();
     }
 
@@ -75,9 +75,10 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.yellow[200],
+      backgroundColor: Color.fromARGB(255, 162, 255, 157),
       appBar: AppBar(
-        title: Text('TO DO'),
+        title: Text('Kayıtlar'),
+        backgroundColor: Color.fromARGB(255, 255, 245, 157),
         elevation: 0,
       ),
       floatingActionButton: FloatingActionButton(

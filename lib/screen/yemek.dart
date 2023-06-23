@@ -35,6 +35,7 @@ class ProjeScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Proje Takip Sistemi'),
+        backgroundColor: Colors.yellow, 
       ),
       body: Container(
         color: Colors.green, // Arka plan rengi yeşil

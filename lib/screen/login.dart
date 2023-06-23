@@ -3,8 +3,6 @@ import 'package:flutter_login_register/model/firebase_auth.dart';
 import 'package:flutter_login_register/screen/register.dart';
 import 'animation.dart';
 
-
-
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
 
@@ -16,11 +14,11 @@ class _LoginScreenState extends State<LoginScreen> {
 final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
 
-  AuthService _authService = AuthService();
+  AuthService _authService = AuthService(); //kimlik dogrulama için
 
   @override
   Widget build(BuildContext context) {
-    var size = MediaQuery.of(context).size;
+    var size = MediaQuery.of(context).size; // ekran boyutu ayarla
     return Scaffold(
         body: Center(
       child: Padding(
@@ -101,7 +99,7 @@ final TextEditingController _emailController = TextEditingController();
                   SizedBox(
                     height: size.height * 0.08,
                   ),
-                  InkWell(
+                  InkWell( //tıklama
                     onTap: () {
                      _authService
                           .signIn(
@@ -117,7 +115,6 @@ final TextEditingController _emailController = TextEditingController();
                       padding: EdgeInsets.symmetric(vertical: 5),
                       decoration: BoxDecoration(
                           border: Border.all(color: Colors.white, width: 2),
-                          //color: colorPrimaryShade,
                           borderRadius: BorderRadius.all(Radius.circular(30))),
                       child: Padding(
                         padding: const EdgeInsets.all(5.0),

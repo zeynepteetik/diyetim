@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_login_register/screen/home_screen.dart';
-
+import 'package:flutter_login_register/screen/login.dart';
 
 class User {
   final String name;
@@ -36,56 +36,70 @@ class _ProfilePageState extends State<ProfilePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Profil'),
+        title: Text("Profil"),
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(builder: (context) => HomeScreen()),
+            );
+          },
+        ),
+        backgroundColor: Color.fromARGB(255, 255, 235, 59),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            CircleAvatar(
-              radius: 100,
-              backgroundImage: AssetImage("assets/images/vesikalık.JPG"),
-            ),
-            SizedBox(height: 100),
-            Text(
-              '${user.name} ${user.surname}',
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
+      body: Container(
+        color: Colors.green, 
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              CircleAvatar(
+                radius: 100,
+                backgroundImage: AssetImage("assets/images/vesikalık.JPG"),
               ),
-            ),
-            SizedBox(height: 10),
-            Text(
-              user.address,
-              style: TextStyle(
-                fontSize: 16,
+              SizedBox(height: 100),
+              Text(
+                '${user.name} ${user.surname}',
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
-            ),
-            SizedBox(height: 10),
-            Text(
-              user.email,
-              style: TextStyle(
-                fontSize: 16,
+              SizedBox(height: 10),
+              Text(
+                user.address,
+                style: TextStyle(
+                  fontSize: 16,
+                ),
               ),
-            ),
-            SizedBox(height: 10),
-            Text(
-              user.phone,
-              style: TextStyle(
-                fontSize: 16,
+              SizedBox(height: 10),
+              Text(
+                user.email,
+                style: TextStyle(
+                  fontSize: 16,
+                ),
               ),
-            ),
-            SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.of(context).pushReplacement(MaterialPageRoute(builder:(context){
-                  return HomeScreen();
-                }));
-              },
-              child: Text('Çıkış Yap'),
-            ),
-          ],
+              SizedBox(height: 10),
+              Text(
+                user.phone,
+                style: TextStyle(
+                  fontSize: 16,
+                ),
+              ),
+              SizedBox(height: 20),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(builder: (context) => LoginScreen()),
+                  );
+                },
+                child: Text('Çıkış Yap'),
+              ),
+            ],
+          ),
         ),
       ),
     );

@@ -1,4 +1,4 @@
-class WeightInfo {
+/*class WeightInfo {
   final int id;
   final String name;
   final Object weight;
@@ -20,3 +20,4 @@ class WeightInfo {
     return 'Weight{id: $id, name: $name, date: $weight}';
   }
 }
+*/

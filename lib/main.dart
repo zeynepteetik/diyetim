@@ -1,22 +1,18 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_login_register/firebase_options.dart';
-import 'package:flutter_login_register/screen/home_screen.dart';
 import 'package:flutter_login_register/screen/login.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
-
-
 void main() async{
-  WidgetsFlutterBinding.ensureInitialized();
+  WidgetsFlutterBinding.ensureInitialized(); //flutter başlatılıyor
   await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
+    options: DefaultFirebaseOptions.currentPlatform, //firebase başlatılıyor
 );
 
-  await Hive.initFlutter();
+  await Hive.initFlutter(); //hive veri tabanı başlatılıyor
 
-  // open a box
-  var box = await Hive.openBox('mybox');
+  var box = await Hive.openBox('mybox'); //kutu açtık
   runApp(const MyApp());
 }
 
@@ -24,14 +20,8 @@ class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context) { //build:arayüz
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-    
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
       home:  LoginScreen(),
       debugShowCheckedModeBanner: false,
     );

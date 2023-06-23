@@ -18,7 +18,7 @@ class _BMIScreenState extends State<BMIScreen> {
       backgroundColor: Colors.grey[300], // Arka plan rengi: Gri
       appBar: AppBar(
         backgroundColor: Colors.green, // AppBar rengi: Yeşil
-        title: Text('BMI Calculator'),
+        title: Text('Vücut Kitle Hesaplama'),
       ),
       body: Padding(
         padding: EdgeInsets.all(16.0),
@@ -97,7 +97,7 @@ class _BMIScreenState extends State<BMIScreen> {
             SizedBox(height: 20.0),
             Text(
 
-              'Vücut Kitle İndeksi (BMI): $bmiResult',
+              'Vücut Kitle İndeksi : $bmiResult',
               style: TextStyle(fontSize: 16.0),
             ),
           ],

@@ -15,9 +15,10 @@ class YemekDetaySayfasi extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Yemek Detayı'),
+        backgroundColor: Colors.yellow, 
       ),
       body: Container(
-        color: Colors.green, // Arka plan rengi yeşil
+        color: Colors.green, 
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,

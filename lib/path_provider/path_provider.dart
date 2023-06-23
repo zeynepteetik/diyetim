@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_login_register/screen/home_screen.dart';
 import 'package:path_provider/path_provider.dart';
 import 'dart:io';
 
-
 class ProviderModel extends StatefulWidget {
-  const ProviderModel({super.key});
-
+  const ProviderModel({Key? key}) : super(key: key);
 
   @override
   State<ProviderModel> createState() => _PathProvState();
@@ -16,9 +15,7 @@ class _PathProvState extends State<ProviderModel> {
   String text = "";
 
   Future<void> createFile(String text) async {
-//provides directory path.
     final directory = await getApplicationDocumentsDirectory();
-//creates text_file in the provided path.
     final file = File('${directory.path}/text_file.txt');
     await file.writeAsString(text);
   }
@@ -42,38 +39,50 @@ class _PathProvState extends State<ProviderModel> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("örnek metin")),
+      appBar: AppBar(
+        title: Text("örnek diyet listesi"),
+        backgroundColor: Colors.yellow,
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(builder: (context) => HomeScreen()),
+            );
+          },
+        ),
+      ),
+      backgroundColor: Colors.green,
       body: Column(
         children: [
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 18.0, vertical: 10),
             child: TextField(
-              textAlign: TextAlign.center, //input aligns to center
-              controller: textController, //assigns TextEditingController
+              textAlign: TextAlign.center,
+              controller: textController,
             ),
           ),
           const SizedBox(
             height: 20,
           ),
           ElevatedButton(
-            child: Text('dosya oluştur'),
-            onPressed: () => createFile(
-                textController.text), //calls createFile() when //button pressed
+            child: Text('Diyet listeyi oluştur'),
+            onPressed: () => createFile(textController.text),
           ),
           const SizedBox(
             height: 20,
           ),
           ElevatedButton(
             onPressed: () async {
-              await readFile(); //calls readFile()
-              setState(() {}); //rebuilds the UI.
+              await readFile();
+              setState(() {});
             },
-            child: Text('dosya oku'),
+            child: Text('Diyet Listeyi oku'),
           ),
           const SizedBox(
             height: 18,
           ),
-          if (text != null) Text('$text') //text set if it's not null.
+          if (text != null) Text('$text'),
         ],
       ),
     );

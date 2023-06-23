@@ -11,8 +11,7 @@ class _RegisterPageState extends State<RegisterPage> {
   final TextEditingController _nameController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
-  final TextEditingController _passwordAgainController =
-      TextEditingController();
+  final TextEditingController _passwordAgainController = TextEditingController();
 
   AuthService _authService = AuthService();
 
@@ -20,7 +19,7 @@ class _RegisterPageState extends State<RegisterPage> {
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     return Scaffold(
-        body: Stack(
+        body: Stack( // widgetleri üst üste yerleştir
       children: [
         Center(
           child: Padding(
@@ -29,7 +28,7 @@ class _RegisterPageState extends State<RegisterPage> {
               height: size.height * .7,
               width: size.width * .85,
               decoration: BoxDecoration(
-                  color: Colors.blue.withOpacity(.75),
+                  color: Colors.green,
                   borderRadius: BorderRadius.all(Radius.circular(20)),
                   boxShadow: [
                     BoxShadow(
